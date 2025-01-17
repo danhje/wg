@@ -55,7 +55,7 @@ def generate_url(args: list[str]) -> str:
 def fetch_and_print(url: str) -> None:
     eprint(f"Fetching {url}")
     try:
-        resp = requests.get(url, timeout=10.0)
+        resp = requests.get(url, timeout=60.0)
         resp.raise_for_status()
     except Exception as e:
         msg = getattr(e, "message", str(e))
